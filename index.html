@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Latitud — Asesoría de Viajes</title>
+<meta name="description" content="Latitud: boletos aéreos, de bus y crucero, reservas de hotel y tours dentro y fuera de El Salvador. Una sola agencia para todo tu viaje.">
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+
+<header class="site" id="siteHeader">
+  <div class="wrap">
+    <a href="" class="logo">LATITUD<span class="dot">.</span><small>Asesoría de Viajes</small></a>
+    <nav class="primary-nav" id="primaryNav">
+      <ul>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#destinos">Destinos</a></li>
+        <li><a href="#proceso">Cómo funciona</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+    <div class="nav-cta">
+      <a href="#contacto" class="btn btn-amber">Cotizar</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="primaryNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-copy">
+        <p class="eyebrow">Agencia de viajes · El Salvador</p>
+        <h1>Tu próximo viaje<br>empieza en <em>estas coordenadas</em></h1>
+        <p class="lead">Boletos aéreos, de bus y de crucero. Reservas de hotel. Tours dentro de El Salvador y en el mundo. Coordinamos todo el itinerario para que vos solo tengas que empacar.</p>
+        <div class="hero-ctas">
+          <a href="#contacto" class="btn btn-amber">Cotizar por WhatsApp</a>
+          <a href="#servicios" class="btn btn-outline">Ver servicios</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <svg class="route-svg" viewBox="0 0 460 260" preserveAspectRatio="none">
+          <path d="M20,170 C120,60 300,50 430,90"></path>
+        </svg>
+        <div class="hero-plane">✈</div>
+        <div class="route-point origin"><span class="code">SAL</span>13.44°N, 89.05°W</div>
+        <div class="route-point dest"><span class="code">Tu destino</span>coordenadas por definir</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TICKER ================= -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span>SAL → MIA</span><span>SAL → CUN</span><span>SAL → MAD</span><span>SAL → BOG</span><span>SAL → PTY</span><span>CRUCERO POR EL CARIBE</span><span>TOUR RUTA DE LAS FLORES</span>
+      <span>SAL → MIA</span><span>SAL → CUN</span><span>SAL → MAD</span><span>SAL → BOG</span><span>SAL → PTY</span><span>CRUCERO POR EL CARIBE</span><span>TOUR RUTA DE LAS FLORES</span>
+    </div>
+  </div>
+
+  <!-- ================= SERVICIOS ================= -->
+  <section class="services" id="servicios">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <p class="eyebrow">Servicios</p>
+        <h2>Reserva lo que necesites, nosotros armamos el resto</h2>
+        <p>Cinco formas de moverte, una sola agencia detrás. Cada boleto y cada reserva pasan por la misma asesoría, de principio a fin.</p>
+      </div>
+
+      <div class="ticket-grid">
+
+        <article class="ticket" data-reveal>
+          <div class="ticket-top">
+            <span class="code">LT-01 · AIR</span>
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 12l19-7-4 7 4 7-19-7z"/><path d="M2 12h13"/></svg>
+          </div>
+          <div class="ticket-body">
+            <h3>Vuelos</h3>
+            <p>Boletos aéreos nacionales e internacionales, comparando rutas y tarifas para que viajes por lo justo.</p>
+          </div>
+          <div class="ticket-perf"></div>
+          <div class="ticket-foot">
+            <span class="tag">Pasajero: vos</span>
+            <div class="barcode"></div>
+          </div>
+        </article>
+
+        <article class="ticket" data-reveal>
+          <div class="ticket-top">
+            <span class="code">LT-02 · BUS</span>
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M3 13h18"/><circle cx="7.5" cy="19.5" r="1.5"/><circle cx="16.5" cy="19.5" r="1.5"/></svg>
+          </div>
+          <div class="ticket-body">
+            <h3>Buses</h3>
+            <p>Boletos de bus para rutas terrestres dentro y fuera de El Salvador, con horarios y terminales confirmados.</p>
+          </div>
+          <div class="ticket-perf"></div>
+          <div class="ticket-foot">
+            <span class="tag">Ruta: terrestre</span>
+            <div class="barcode"></div>
+          </div>
+        </article>
+
+        <article class="ticket" data-reveal>
+          <div class="ticket-top">
+            <span class="code">LT-03 · SEA</span>
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 17l1.5-5h15L21 17"/><path d="M5 12V6h9l3 6"/><path d="M2 20c2 1.2 4 1.2 6 0s4-1.2 6 0 4 1.2 6 0"/></svg>
+          </div>
+          <div class="ticket-body">
+            <h3>Cruceros</h3>
+            <p>Reservaciones de crucero para navegar el Caribe y otras rutas, con cabina y itinerario a tu medida.</p>
+          </div>
+          <div class="ticket-perf"></div>
+          <div class="ticket-perf" style="display:none"></div>
+          <div class="ticket-foot">
+            <span class="tag">Cabina: a elegir</span>
+            <div class="barcode"></div>
+          </div>
+        </article>
+
+        <article class="ticket" data-reveal>
+          <div class="ticket-top">
+            <span class="code">LT-04 · STAY</span>
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21V9l9-6 9 6v12"/><path d="M9 21v-8h6v8"/></svg>
+          </div>
+          <div class="ticket-body">
+            <h3>Hoteles</h3>
+            <p>Reservas de hotel en El Salvador y en el destino que elijas, según presupuesto y ubicación.</p>
+          </div>
+          <div class="ticket-perf"></div>
+          <div class="ticket-foot">
+            <span class="tag">Check-in: flexible</span>
+            <div class="barcode"></div>
+          </div>
+        </article>
+
+        <article class="ticket" data-reveal>
+          <div class="ticket-top">
+            <span class="code">LT-05 · TOUR</span>
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21l6-14 4 8 3-6 5 12z"/><circle cx="12" cy="4" r="1.6"/></svg>
+          </div>
+          <div class="ticket-body">
+            <h3>Tours</h3>
+            <p>Tours internos en El Salvador y tours internacionales, guiados o a tu ritmo, según lo que busques conocer.</p>
+          </div>
+          <div class="ticket-perf"></div>
+          <div class="ticket-foot">
+            <span class="tag">Salida: grupal o privada</span>
+            <div class="barcode"></div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+<!-- ================= DESTINOS ================= -->
+  <section class="destinations" id="destinos">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <p class="eyebrow">Destinos</p>
+        <h2>Cerca o lejos, mismas coordenadas de confianza</h2>
+        <p>Una muestra de lo que armamos: tours dentro de El Salvador y salidas internacionales, por aire y por mar.</p>
+      </div>
+      <div class="dest-grid">
+
+        <div class="dest-card v1" data-reveal>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21l6-14 4 8 3-6 5 12z"/></svg>
+          <span class="tag">Tour interno</span>
+          <h3>Ruta de las Flores</h3>
+          <p class="coords">13.83° N, 89.75° W</p>
+        </div>
+
+        <div class="dest-card v2" data-reveal>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21V9l9-6 9 6v12"/><path d="M9 21v-8h6v8"/></svg>
+          <span class="tag">Tour interno</span>
+          <h3>Suchitoto</h3>
+          <p class="coords">13.94° N, 89.03° W</p>
+        </div>
+
+        <div class="dest-card v3" data-reveal>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 12l19-7-4 7 4 7-19-7z"/></svg>
+          <span class="tag">Vuelo internacional</span>
+          <h3>Cancún, México</h3>
+          <p class="coords">21.16° N, 86.85° W</p>
+        </div>
+
+        <div class="dest-card v4" data-reveal>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 12l19-7-4 7 4 7-19-7z"/></svg>
+          <span class="tag">Vuelo internacional</span>
+          <h3>Cartagena, Colombia</h3>
+          <p class="coords">10.39° N, 75.51° W</p>
+        </div>
+
+        <div class="dest-card v5" data-reveal>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 12l19-7-4 7 4 7-19-7z"/></svg>
+          <span class="tag">Vuelo internacional</span>
+          <h3>Madrid, España</h3>
+          <p class="coords">40.42° N, 3.70° W</p>
+        </div>
+
+        <div class="dest-card v6" data-reveal>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 17l1.5-5h15L21 17"/><path d="M5 12V6h9l3 6"/></svg>
+          <span class="tag">Crucero</span>
+          <h3>Caribe, multi-destino</h3>
+          <p class="coords">Ruta variable según itinerario</p>
+        </div>
+
+      </div>
+    </div>
+  </section>  
+
+  <!-- ================= CÓMO FUNCIONA ================= -->
+  <section class="how" id="proceso">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <p class="eyebrow">Cómo funciona</p>
+        <h2>Cuatro pasos, sin letra pequeña</h2>
+        <p>El mismo proceso para un boleto suelto o un itinerario completo con vuelos, hotel y tour incluidos.</p>
+      </div>
+      <div class="steps">
+        <div class="step" data-reveal>
+          <span class="num">01</span>
+          <h3>Contanos qué necesitas</h3>
+          <p>Por WhatsApp, Instagram o el formulario de esta página: destino, fechas y cuántos viajan.</p>
+        </div>
+        <div class="step" data-reveal>
+          <span class="num">02</span>
+          <h3>Te armamos opciones</h3>
+          <p>Cotización clara con vuelo, bus, crucero, hotel o tour, según lo que necesites combinar.</p>
+        </div>
+        <div class="step" data-reveal>
+          <span class="num">03</span>
+          <h3>Reservás y confirmás</h3>
+          <p>Pago seguro y confirmación de cada boleto y reserva, con itinerario en mano.</p>
+        </div>
+        <div class="step" data-reveal>
+          <span class="num">04</span>
+          <h3>Viajás tranquilo</h3>
+          <p>Seguimiento antes y durante el viaje, por si algo cambia en el camino.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= VALORES ================= -->
+  <section class="values">
+    <div class="wrap">
+      <div class="value" data-reveal>
+        <h4>Un solo punto de contacto</h4>
+        <p>Vuelo, bus, crucero, hotel y tour coordinados por la misma persona, sin repetir tu historia en cada llamada.</p>
+      </div>
+      <div class="value" data-reveal>
+        <h4>Cotización sin vueltas</h4>
+        <p>Precios y opciones claras desde el primer mensaje, para que decidas con la información completa.</p>
+      </div>
+      <div class="value" data-reveal>
+        <h4>Acompañamiento real</h4>
+        <p>Seguimiento antes, durante y después del viaje, no solo hasta que se confirma la compra.</p>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <!-- ================= CONTACTO ================= -->
+  <section class="contact" id="contacto">
+    <div class="wrap contact-grid">
+      <div class="contact-info" data-reveal>
+        <p class="eyebrow">Contacto</p>
+        <h2>¿Listo para definir tus coordenadas?</h2>
+        <p>Escribinos con tu destino y fechas tentativas, o dejanos tus datos en el formulario y te contactamos con la cotización.</p>
+        <div class="contact-channels">
+          <div class="channel">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            WhatsApp: +503 6001 9193
+          </div>
+          <div class="channel">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 6 10-6"/></svg>
+            hola@holalatitud.com
+          </div>
+          <div class="channel">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+            @holalatitud
+          </div>
+        </div>
+      </div>
+
+      <form class="quote-form" id="quoteForm" data-reveal action="https://formsubmit.co/2e4613b5eb5ba6432b57e7050d9818c1" method="POST">
+        <div class="form-row">
+          <div class="field">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" required placeholder="Ej. Nombre">
+          </div>
+          <div class="field">
+            <label for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" name="telefono" required placeholder="Ej. Teléfono">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="servicio">Servicio</label>
+            <select id="servicio" name="servicio">
+              <option>Vuelo</option>
+              <option>Bus</option>
+              <option>Crucero</option>
+              <option>Hotel</option>
+              <option>Tour interno</option>
+              <option>Tour internacional</option>
+              <option>Combinado</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="fecha">Fecha tentativa</label>
+            <input type="date" id="fecha" name="fecha">
+          </div>
+        </div>
+        <div class="field">
+          <label for="mensaje">Contanos tu destino</label>
+          <textarea id="mensaje" name="mensaje" placeholder="Ej. Vuelo a Cancún para 2 personas, hotel 4 noches, primera semana de diciembre."></textarea>
+        </div>
+        <button type="submit" class="btn btn-amber">Enviar cotización</button>
+        <div class="form-success" id="formSuccess" role="status">
+          <span>✓</span> Gracias, recibimos tu solicitud. Te contactamos pronto.
+        </div>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a href="#top" class="logo">LATITUD<span class="dot">.</span></a>
+        <p class="about">Agencia de viajes salvadoreña. Boletos aéreos, de bus y crucero, hoteles y tours dentro y fuera de El Salvador.</p>
+      </div>
+      <div>
+        <h5>Servicios</h5>
+        <ul>
+          <li><a href="#servicios">Vuelos</a></li>
+          <li><a href="#servicios">Buses</a></li>
+          <li><a href="#servicios">Cruceros</a></li>
+          <li><a href="#servicios">Hoteles</a></li>
+          <li><a href="#servicios">Tours</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Agencia</h5>
+        <ul>
+          <li><a href="#destinos">Destinos</a></li>
+          <li><a href="#proceso">Cómo funciona</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contacto</h5>
+        <ul>
+          <li>WhatsApp: +503 6001 9193</li>
+          <li>hola@holalatitud.com</li>
+          <li>Instagram: @holalatitud</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Latitud, Asesoría de Viajes.</span>
+      <span>El Salvador</span>
+    </div>
+  </div>
+</footer>
+<script src="js/script.js">
+</script>
+</body>
+</html>
