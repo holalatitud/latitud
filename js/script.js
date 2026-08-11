@@ -38,8 +38,54 @@
   // Quote form (front-end only placeholder)
   const quoteForm = document.getElementById('quoteForm');
   const formSuccess = document.getElementById('formSuccess');
-  quoteForm.addEventListener('submit', (e) => {
+  quoteForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    formSuccess.classList.add('show');
-    quoteForm.reset();
+    
+    const formData = new FormData(e.target);
+
+    try {
+    const response = await fetch(
+      'https://formsubmit.co/ajax/40fcd315400363f4f2c42c3eabdb1cbe',
+      {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json'
+        },
+        body: formData
+      }
+    );
+
+
+     const result = await response.json();
+
+    if (result.success) {
+      formSuccess.classList.add('show');
+      quoteForm.reset();
+    } else {
+      console.error(result);
+      alert('Hubo un problema al enviar la solicitud.');
+    }
+
+  } catch (error) {
+    console.error(error);
+    alert('No se pudo enviar la solicitud.');
+  }
   });
+
+  //Resize logo
+  let image = document.getElementById('imageScroll'); 
+window.addEventListener('scroll' , function () {
+     if (window.scrollY > 0) {
+        image.classList.add('resize');
+    } else {
+        image.classList.remove('resize');
+    }
+});
+//Scroll to the top Logo
+let logoLinks = document.querySelectorAll('.logoLink')
+logoLinks.forEach(logo =>{
+  logo.addEventListener('click', function (e) {
+      e.preventDefault();
+      window.scrollTo(0, 0);
+  })
+});
