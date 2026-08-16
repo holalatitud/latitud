@@ -1,3 +1,6 @@
+  //import Swal from 'sweetalert2'
+
+  
   // Header background on scroll
   const header = document.getElementById('siteHeader');
   const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 12);
@@ -36,16 +39,39 @@
   }
 
   // Quote form (front-end only placeholder)
-  const quoteForm = document.getElementById('quoteForm');
-  const formSuccess = document.getElementById('formSuccess');
-  quoteForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    
-    const formData = new FormData(e.target);
+ const quoteForm = document.getElementById('searchForm');
+const serviceInput = document.getElementById('selectedService');
+const tabButtons = document.querySelectorAll('.tab-btn');
 
-    try {
+
+// Cambiar servicio
+tabButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+
+    // Quitar active de todos
+    tabButtons.forEach(button => {
+      button.classList.remove('active');
+    });
+
+    // Activar botón seleccionado
+    btn.classList.add('active');
+
+    // Guardar servicio seleccionado
+    serviceInput.value = btn.dataset.service;
+  });
+});
+
+
+// Enviar formulario
+quoteForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const formData = new FormData(quoteForm);
+
+  try {
+
     const response = await fetch(
-      'https://formsubmit.co/ajax/40fcd315400363f4f2c42c3eabdb1cbe',
+      'https://formsubmit.co/ajax/46a04361f88e7902d571f96d94952d9c',
       {
         method: 'POST',
         headers: {
@@ -55,32 +81,65 @@
       }
     );
 
-
-     const result = await response.json();
+    const result = await response.json();
 
     if (result.success) {
-      formSuccess.classList.add('show');
+
+      //alert('¡Solicitud enviada correctamente!');
+  
+      Swal.fire({
+        text: "¡Solicitud enviada correctamente!",
+        icon: "success"
+      });
+
       quoteForm.reset();
+
+      // Volver a Vuelos después de enviar
+      serviceInput.value = 'Vuelos';
+
+      tabButtons.forEach(button => {
+        button.classList.remove('active');
+      });
+
+      tabButtons[0].classList.add('active');
+
     } else {
+
       console.error(result);
-      alert('Hubo un problema al enviar la solicitud.');
+      Swal.fire({
+        icon: "error",
+        text: "Hubo un problema al enviar la solicitud",
+        confirmButtonText: "Contactar por WhatsApp",
+    }).then((result) => {
+        if (result.isConfirmed) {
+            window.open(
+                "https://wa.me/XXXXXXX?text=¡Hola%2C%20estoy%20interesado%2Fa%20en%20obtener%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios!",
+                "_blank"
+            );
+        }
+    });
+
     }
 
   } catch (error) {
-    console.error(error);
-    alert('No se pudo enviar la solicitud.');
-  }
-  });
 
-  //Resize logo
-  let image = document.getElementById('imageScroll'); 
-window.addEventListener('scroll' , function () {
-     if (window.scrollY > 0) {
-        image.classList.add('resize');
-    } else {
-        image.classList.remove('resize');
-    }
+    console.error(error);
+    Swal.fire({
+        icon: "error",
+        text: "No se pudo enviar la solicitud",
+        confirmButtonText: "Contactar por WhatsApp",
+    }).then((result) => {
+        if (result.isConfirmed) {
+            window.open(
+                "https://wa.me/XXXXXXX?text=¡Hola%2C%20estoy%20interesado%2Fa%20en%20obtener%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios!",
+                "_blank"
+            );
+        }
+    });
+
+  }
 });
+
 //Scroll to the top Logo
 let logoLinks = document.querySelectorAll('.logoLink')
 logoLinks.forEach(logo =>{
@@ -89,3 +148,5 @@ logoLinks.forEach(logo =>{
       window.scrollTo(0, 0);
   })
 });
+
+

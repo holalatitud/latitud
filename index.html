@@ -10,14 +10,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 
 <header class="site" id="siteHeader">
   <div class="wrap">
-    <a href="" class="logo logoLink"><img src="resources/3.png" alt="" class="resize" id="imageScroll"></a>
+    <a href="" class="logo logoLink"><img src="resources/logo.png" alt="" id></a>
     <nav class="primary-nav" id="primaryNav">
       <ul>
         <li><a href="#servicios">Servicios</a></li>
@@ -67,6 +66,80 @@
       <span>SAL → MIA</span><span>SAL → CUN</span><span>SAL → MAD</span><span>SAL → BOG</span><span>SAL → PTY</span><span>CRUCERO POR EL CARIBE</span><span>TOUR RUTA DE LAS FLORES</span>
     </div>
   </div>
+
+
+  <!-- ================= CONTACT FORM ================= -->
+<section class="quote-section" id="contactForm">
+  
+  <div class="search-widget" id="cotizar">
+    <!--<h2>¿Listo para definir tus coordenadas?</h2>-->
+
+  <div class="widget-tabs">
+    <button class="tab-btn active" type="button" data-service="Vuelos">✈️ Vuelos</button>
+    <button class="tab-btn" type="button" data-service="Hoteles">🏨 Hoteles</button>
+    <button class="tab-btn" type="button" data-service="Cruceros">🚢 Cruceros</button>
+    <button class="tab-btn" type="button" data-service="Transportes">🚗 Transportes</button>
+    <button class="tab-btn" type="button" data-service="Tours">🌴 Tours</button>
+  </div>
+
+  <form class="widget-form" id="searchForm">
+
+    <!-- Datos del cliente -->
+    <div class="form-row row-contact">
+      
+    <!-- Servicio seleccionado -->
+    <input type="hidden" name="servicio" id="selectedService" value="Vuelos">
+
+      <div class="field-group">
+        <label>Nombre Completo</label>
+        <input type="text" name="nombre" placeholder="Ej. Juan Pérez" required>
+      </div>
+
+      <div class="field-group">
+        <label>Teléfono o Correo de Contacto</label>
+        <input type="text" name="contacto" placeholder="Ej. +503 0000 0000 | hola@gmail.com" required>
+      </div>
+
+    </div>
+
+    <!-- Detalles del viaje -->
+    <div class="form-row row-details">
+
+      <div class="field-group">
+        <label>Origen</label>
+        <input type="text" value="San Salvador (SAL)" required name="origen">
+      </div>
+
+      <div class="field-group">
+        <label>Destino</label>
+        <input type="text" placeholder="¿A dónde viajas?" required name="fecha">
+      </div>
+
+      <div class="field-group">
+        <label>Fecha Tentativa</label>
+        <input type="date" required>
+      </div>
+
+      <div class="field-group">
+        <label>Pasajeros</label>
+        <select name="pasajeros">
+          <option>1 Pasajero</option>
+          <option>2 Pasajeros</option>
+          <option>3 a 5 Pasajeros</option>
+          <option>Grupo (6+)</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn btn-amber">Cotizar</button>
+
+    </div>
+
+  </form>
+
+</div>
+
+</section>
+
 
   <!-- ================= SERVICIOS ================= -->
   <section class="services" id="servicios">
@@ -301,22 +374,22 @@
         <p class="eyebrow">Contacto</p>
         <h2>¿Listo para definir tus coordenadas?</h2>
         <p>Escribinos con tu destino y fechas tentativas, o dejanos tus datos en el formulario y te contactamos con la cotización.</p>
-        <div class="contact-channels">
-          <div class="channel">
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-            WhatsApp: +503 6216 7313
+        <div class="contact-channels wrap-channels">
+          <a href="https://wa.me/50362167313?text=¡Hola%2C%20estoy%20interesado%2Fa%20en%20obtener%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios!" target="_blank" class="btn btn-amber">Cotizar por WhatsApp</a>
+
+          <div class="channel" >
+          <a href="#contactForm" class="btn btn-periwinkle">Contáctanos</a>
           </div>
           <div class="channel">
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 6 10-6"/></svg>
-            hola@holalatitud.com
-          </div>
-          <div class="channel">
+            <a href="https://www.instagram.com/holalatitud?igsh=eG15aThlaHdhYXRo" target="_blank" class="btn btn-outline-dark">
             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
-            @holalatitud
+             @holalatitud 
+          </a>
           </div>
         </div>
       </div>
 
+      <!--
       <form class="quote-form" id="quoteForm" data-reveal action="https://formsubmit.co/ajax/40fcd315400363f4f2c42c3eabdb1cbe" method="POST">
         <div class="form-row">
           <div class="field">
@@ -356,8 +429,8 @@
         </div>
         <input type="hidden" name="_subject" value="Nuevo Contacto">
         <input type="hidden" name="_captcha" value="false">
-        <!--<input type="hidden" name="_next" value="https://holalatitud.github.io/latitud/#destinos">-->
-      </form>
+      </form>-->
+      
     </div>
   </section>
 
@@ -367,7 +440,7 @@
   <div class="wrap">
     <div class="footer-grid">
       <div>
-        <a href="" class="logo logoLink">LATITUD<span class="dot">.</span></a>
+        <a href="" class="logo logoLink"><img src="resources/logo.png" alt=""></a>
         <p class="about">Agencia de viajes salvadoreña. Boletos aéreos, de bus y crucero, hoteles y tours dentro y fuera de El Salvador.</p>
       </div>
       <div>
@@ -403,7 +476,7 @@
     </div>
   </div>
 </footer>
-<script src="js/script.js">
+<script src="js/script.js"></script>
 </script>
 </body>
 </html>
