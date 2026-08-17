@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Latitud — Asesoría de Viajes</title>
+<link rel="icon" type="image/x-icon" href="resources/icon.png">
+<title>Latitud Travel</title>
 <meta name="description" content="Latitud: boletos aéreos, de bus y crucero, reservas de hotel y tours dentro y fuera de El Salvador. Una sola agencia para todo tu viaje.">
 
 <link rel="stylesheet" href="css/style.css">
@@ -26,7 +27,7 @@
       </ul>
     </nav>
     <div class="nav-cta">
-      <a href="#contacto" class="btn btn-amber">Cotizar</a>
+      <a href="#contactForm" class="btn btn-amber">Cotizar</a>
       <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="primaryNav">
         <span></span><span></span><span></span>
       </button>
@@ -44,15 +45,30 @@
         <h1>Tu próximo viaje<br>empieza en <em>estas coordenadas</em></h1>
         <p class="lead">Boletos aéreos, de bus y de crucero. Reservas de hotel. Tours dentro de El Salvador y en el mundo. Coordinamos todo el itinerario para que vos solo tengas que empacar.</p>
         <div class="hero-ctas">
-          <a href="https://wa.me/50362167313?text=¡Hola%2C%20estoy%20interesado%2Fa%20en%20obtener%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios!" target="_blank" class="btn btn-amber">Cotizar por WhatsApp</a>
+          <!--<a href="https://wa.me/50362167313?text=¡Hola%2C%20estoy%20interesado%2Fa%20en%20obtener%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios!" target="_blank" class="btn btn-amber">Cotizar por WhatsApp</a>-->
+          <div class="channel icon">
+              <a href="https://wa.me/50362167313?text=¡Hola%2C%20estoy%20interesado%2Fa%20en%20obtener%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios!" target="_blank" class="btn btn-amber">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="1.6">
+              <path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5z"/>
+              <path d="M8.5 8.5c.3-.4.8-.5 1.1-.1l1 1.3c.2.3.2.7 0 1l-.5.6c.6 1.1 1.5 2 2.6 2.6l.6-.5c.3-.2.7-.2 1 0l1.3 1c.4.3.3.8-.1 1.1-.5.4-1.2.6-1.8.4-2.8-.7-5-2.9-5.7-5.7-.2-.6 0-1.3.5-1.7z"/>
+              </svg>
+              Cotizar por WhatsApp
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="1.6">
+              <path d="M5 19L19 5"/>
+              <path d="M9 5h10v10"/>
+              </svg>
+              </a>
+          </div>
           <a href="#servicios" class="btn btn-outline">Ver servicios</a>
         </div>
       </div>
       <div class="hero-visual" aria-hidden="true">
+        <div class="plane-container">
+            <div class="hero-plane">✈</div>
+        </div>
         <svg class="route-svg" viewBox="0 0 460 260" preserveAspectRatio="none">
           <path d="M20,170 C120,60 300,50 430,90"></path>
         </svg>
-        <div class="hero-plane">✈</div>
         <div class="route-point origin"><span class="code">SAL</span>13.44°N, 89.05°W</div>
         <div class="route-point dest"><span class="code">Tu destino</span>coordenadas por definir</div>
       </div>
@@ -88,36 +104,62 @@
     <div class="form-row row-contact">
       
     <!-- Servicio seleccionado -->
-    <input type="hidden" name="servicio" id="selectedService" value="Vuelos">
+     <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="Servicio" id="selectedService" value="Vuelos">
 
       <div class="field-group">
         <label>Nombre Completo</label>
-        <input type="text" name="nombre" placeholder="Ej. Juan Pérez" required>
+        <input type="text" name="Nombre" placeholder="Ej. Juan Pérez" required>
       </div>
 
       <div class="field-group">
-        <label>Teléfono o Correo de Contacto</label>
-        <input type="text" name="contacto" placeholder="Ej. +503 0000 0000 | hola@gmail.com" required>
+        <label>Teléfono</label>
+        <input type="number" name="Teléfono" placeholder="Ej. +503 0000 0000" required>
       </div>
 
     </div>
+
+    <div class="form-row">
+      <div class="field-group">
+        <label>Correo Electrónico</label>
+        <input type="text" name="Email" placeholder="hola@gmail.com" required>
+      </div>
+
+      <div class="trip-toggle">
+        <button type="button" class="trip-option active" data-trip="Ida-y-Vuelta">
+            Ida y vuelta
+        </button>
+
+        <button type="button" class="trip-option" data-trip="Ida">
+            Solo ida
+        </button>
+    </div>
+      <input type="hidden" name="Tipo" id="tripType" value="Ida-y-Vuelta">
+    </div>
+
+
 
     <!-- Detalles del viaje -->
     <div class="form-row row-details">
 
       <div class="field-group">
         <label>Origen</label>
-        <input type="text" value="San Salvador (SAL)" required name="origen">
+        <input type="text" value="San Salvador (SAL)" required name="Origen">
       </div>
 
       <div class="field-group">
         <label>Destino</label>
-        <input type="text" placeholder="¿A dónde viajas?" required name="fecha">
+        <input type="text" placeholder="¿A dónde viajas?" required name="Destino">
       </div>
 
       <div class="field-group">
-        <label>Fecha Tentativa</label>
-        <input type="date" required>
+        <label>SALIDA</label>
+        <input type="date" required name="Salida">
+      </div>
+
+      <div class="field-group">
+        <label>REGRESO</label>
+        <input type="date" required name="Regreso" id="regreso-date">
       </div>
 
       <div class="field-group">
@@ -129,11 +171,19 @@
           <option>Grupo (6+)</option>
         </select>
       </div>
-
-      <button type="submit" class="btn btn-amber">Cotizar</button>
-
     </div>
 
+    <div class="contact-check">
+      <div><input type="checkbox" name="TipoDeContacto-WhatsApp"><label for="TipoDeContacto">Deseo ser contactado por WhatsApp</label></div>
+      <div><input type="checkbox" name="TipoDeContacto-Correo"><label for="TipoDeContacto">Deseo ser contactado por correo</label></div>
+    </div>
+
+    <div class="btn-submit-form">
+      <div class="field-group" style="width: 50%;">
+        <button type="submit" class="btn btn-amber">Cotizar</button>
+      </div>
+
+    </div>
   </form>
 
 </div>
@@ -375,62 +425,44 @@
         <h2>¿Listo para definir tus coordenadas?</h2>
         <p>Escribinos con tu destino y fechas tentativas, o dejanos tus datos en el formulario y te contactamos con la cotización.</p>
         <div class="contact-channels wrap-channels">
-          <a href="https://wa.me/50362167313?text=¡Hola%2C%20estoy%20interesado%2Fa%20en%20obtener%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios!" target="_blank" class="btn btn-amber">Cotizar por WhatsApp</a>
+          <div class="channel">
+              <a href="https://wa.me/50362167313?text=¡Hola%2C%20estoy%20interesado%2Fa%20en%20obtener%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios!" target="_blank" class="btn btn-amber">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="1.6">
+                <path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5z"/>
+                <path d="M8.5 8.5c.3-.4.8-.5 1.1-.1l1 1.3c.2.3.2.7 0 1l-.5.6c.6 1.1 1.5 2 2.6 2.6l.6-.5c.3-.2.7-.2 1 0l1.3 1c.4.3.3.8-.1 1.1-.5.4-1.2.6-1.8.4-2.8-.7-5-2.9-5.7-5.7-.2-.6 0-1.3.5-1.7z"/>
+                </svg>
+                Cotizar por WhatsApp
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="1.6">
+                <path d="M5 19L19 5"/>
+                <path d="M9 5h10v10"/>
+                </svg>
+              </a>
+          </div>
 
           <div class="channel" >
-          <a href="#contactForm" class="btn btn-periwinkle">Contáctanos</a>
+          <a href="#contactForm" class="btn btn-periwinkle">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#FFDDA1" stroke-width="1.6">
+            <rect x="3" y="5" width="18" height="14" rx="2"/>
+            <path d="M4 7l8 6 8-6"/>
+            </svg>
+            Contáctanos</a>
           </div>
           <div class="channel">
             <a href="https://www.instagram.com/holalatitud?igsh=eG15aThlaHdhYXRo" target="_blank" class="btn btn-outline-dark">
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="url(#instagram-gradient-1)" stroke-width="1.6">
+              <defs>
+                <linearGradient id="instagram-gradient-1" x1="0%" y1="100%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#F58529"/>
+                    <stop offset="50%" stop-color="#DD2A7B"/>
+                    <stop offset="100%" stop-color="#8134AF"/>
+                </linearGradient>
+              </defs>
+              <rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
              @holalatitud 
-          </a>
+            </a>
           </div>
         </div>
       </div>
-
-      <!--
-      <form class="quote-form" id="quoteForm" data-reveal action="https://formsubmit.co/ajax/40fcd315400363f4f2c42c3eabdb1cbe" method="POST">
-        <div class="form-row">
-          <div class="field">
-            <label for="nombre" name="nombre">Nombre</label>
-            <input type="text" id="nombre" name="nombre" required placeholder="Ej. Nombre"/>
-          </div>
-          <div class="field">
-            <label for="telefono" name="telefono">Teléfono</label>
-            <input type="tel" id="telefono" name="telefono" required placeholder="Ej. Teléfono"/>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="field">
-            <label for="servicio">Servicio</label>
-            <select id="servicio" name="servicio">
-              <option>Vuelo</option>
-              <option>Bus</option>
-              <option>Crucero</option>
-              <option>Hotel</option>
-              <option>Tour interno</option>
-              <option>Tour internacional</option>
-              <option>Combinado</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="fecha" name="fecha">Fecha tentativa</label>
-            <input type="date" id="fecha" name="fecha"/>
-          </div>
-        </div>
-        <div class="field">
-          <label for="mensaje" name="mensaje">Contanos tu destino</label>
-          <textarea id="mensaje" name="mensaje" placeholder="Ej. Vuelo a Cancún para 2 personas, hotel 4 noches, primera semana de diciembre."></textarea>
-        </div>
-        <button class="btn btn-amber">Enviar cotización</button>
-        <div class="form-success" id="formSuccess" role="status">
-          <span>✓</span> Gracias, recibimos tu solicitud. Te contactamos pronto.
-        </div>
-        <input type="hidden" name="_subject" value="Nuevo Contacto">
-        <input type="hidden" name="_captcha" value="false">
-      </form>-->
-      
     </div>
   </section>
 
@@ -463,10 +495,48 @@
       </div>
       <div>
         <h5>Contacto</h5>
-        <ul>
-          <li>WhatsApp: +503 6216 7313</li>
-          <li>hola@holalatitud.com</li>
-          <li>Instagram: @holalatitud</li>
+        <ul class="contact-footer">
+          <li>
+            <div class="channel contact-footer">
+              <a href="https://wa.me/50362167313?text=¡Hola%2C%20estoy%20interesado%2Fa%20en%20obtener%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios!" target="_blank" class="btn btn-amber">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="1.6">
+              <path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5z"/>
+              <path d="M8.5 8.5c.3-.4.8-.5 1.1-.1l1 1.3c.2.3.2.7 0 1l-.5.6c.6 1.1 1.5 2 2.6 2.6l.6-.5c.3-.2.7-.2 1 0l1.3 1c.4.3.3.8-.1 1.1-.5.4-1.2.6-1.8.4-2.8-.7-5-2.9-5.7-5.7-.2-.6 0-1.3.5-1.7z"/>
+              </svg>
+              Cotizar por WhatsApp
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="1.6">
+              <path d="M5 19L19 5"/>
+              <path d="M9 5h10v10"/>
+              </svg>
+              </a>
+            </div>
+          </li>
+          <li>
+            <div class="channel contact-footer" >
+              <a href="#contactForm" class="btn btn-periwinkle">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#FFDDA1" stroke-width="1.6">
+              <rect x="3" y="5" width="18" height="14" rx="2"/>
+              <path d="M4 7l8 6 8-6"/>
+              </svg>
+              Contáctanos</a>
+          </div>
+          </li>
+          <li>
+            <div class="channel contact-footer">
+              <a href="https://www.instagram.com/holalatitud?igsh=eG15aThlaHdhYXRo" target="_blank" class="btn btn-outline">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="url(#instagram-gradient-1)" stroke-width="1.6">
+                <defs>
+                  <linearGradient id="instagram-gradient-1" x1="0%" y1="100%" x2="100%" y2="0%">
+                      <stop offset="0%" stop-color="#F58529"/>
+                      <stop offset="50%" stop-color="#DD2A7B"/>
+                      <stop offset="100%" stop-color="#8134AF"/>
+                  </linearGradient>
+                </defs>
+                <rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+                @holalatitud 
+              </a>
+            </div>
+          </li>
         </ul>
       </div>
     </div>

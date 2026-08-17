@@ -61,6 +61,28 @@ tabButtons.forEach(btn => {
   });
 });
 
+const tripOptions = document.querySelectorAll(".trip-option");
+const tripType = document.getElementById("tripType");
+
+tripOptions.forEach(option => {
+    option.addEventListener("click", () => {
+
+        tripOptions.forEach(button => {
+            button.classList.remove("active");
+        });
+
+        option.classList.add("active");
+
+        tripType.value = option.dataset.trip;
+        const dateInput = document.getElementById('regreso-date')
+        if (option.dataset.trip === "Ida") {
+            dateInput.disabled = true;
+        } else {
+            dateInput.disabled = false;
+        }
+
+    });
+});
 
 // Enviar formulario
 quoteForm.addEventListener('submit', async (e) => {
@@ -148,5 +170,6 @@ logoLinks.forEach(logo =>{
       window.scrollTo(0, 0);
   })
 });
+
 
 
